@@ -1,0 +1,15 @@
+<script src="http://localhost:8080/socket.io/socket.io.js"></script>
+
+<script>
+  //連結socket.io server位置
+  var socket = io.connect('http://localhost:8080');
+  //聽取news這個event，並在callback中處理
+  socket.on('news', function (data) {
+      
+    console.log('[on news]' + data);
+      
+    //client收到訊息，觸發server另一個event，並且傳入data給server
+    socket.emit('my other event', 'hello server');
+
+  });
+</script>
