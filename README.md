@@ -1,16 +1,18 @@
-#http://keychat.online
+# Go Go Painting
 
-# keyChat
-一个基于golang的匿名聊天室程序
+---
 
-随意输入用户名 和 房间号，会根据房间号进入聊天室
+一個能夠掛名，跟朋友玩的互動繪畫聊天室
 
-聊天所有的记录不会被保存。
+## prerequire
+  * [beego](https://beego.me) framework
+  * nodejs
 
-this is a anonymous chatting program,
+## run
+need two server (terminals)
+```
+GoGoPainting/socket_test$ nodejs server.js
+GoGoPainting$ bee run
+```
 
-input a username and a roomid then you can go to a chatting room which is identified by the roomid that you typed.
-
-By beego and websocket
-
-[keyChat](http://keychat.online)
+## [開發紀錄](https://hackmd.io/s/ryOuDfKjf)
