@@ -1,3 +1,4 @@
+var drawer_appear = 0;
 var ttmmppX = [];
 var ttmmppY = [];
 var ttmmpp_where = -1;
@@ -38,6 +39,16 @@ io.sockets.on('connection', function (socket) {
         //}, 1000);
       }
   });
+
+  socket.on('my XY list event', function (datax, datay) {
+    ttmmppX = datax;
+    ttmmppY = datay;
+  });
+
+  setInterval(function(){
+    socket.emit('list plot go', ttmmppX, ttmmppY);
+  }, 1000);
+
   /*socket.on('client want plot', function (nothing) {
     if(ttmmpp_where+1<ttmmppX.length){
       console.log('give u plot');
@@ -48,7 +59,7 @@ io.sockets.on('connection', function (socket) {
   });*/
 
   setInterval(function(){count+=1;
-    console.log('setinterval  '+count);
+    //console.log('setinterval  '+count);
     if(ttmmpp_where+1<ttmmppX.length && ttmmppX.length>0){
       ttmmpp_where = ttmmpp_where + 1;
       socket.emit('server give plot', ttmmppX[ttmmpp_where], ttmmppY[ttmmpp_where]);
@@ -59,6 +70,14 @@ io.sockets.on('connection', function (socket) {
 
   setInterval(function(){
     socket.emit('first connect', ttmmppX, ttmmppY);
+  }, 1000);
+
+  setInterval(function(){
+    if(drawer_appear == 0){
+      console.log('drawer appear = 1');
+      drawer_appear = 1;
+      socket.emit('drawer appear', drawer_appear);
+    }
   }, 1000);
 
   setInterval(function(){

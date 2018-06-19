@@ -21,7 +21,7 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/gorilla/websocket"
 
-	"keyChat/models"
+	"GoGoPainting/models"
 )
 
 // WebSocketController handles WebSocket requests.

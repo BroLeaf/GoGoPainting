@@ -9,40 +9,42 @@
 .demo-layout-transparent .mdl-layout__drawer-button {
   /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
-  color: white;
+  color: rgb(245, 241, 241);
 }
 </style>
 {{define "body"}}
 
-
-
-
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
  
   <main class="mdl-layout__content">
-     <h3 style="color:blue">Welcom to GoGoDraw !</h3>
+     <!--<h2 style="color:white"> GO GO PAINTING !</h2> -->
+     <img src="../static/img/logo2.png"width=500 height=100/>
     <br>
 <form action="/join" method="post" >
+    <marquee>倪好醜</marquee>
   <!--左邊的textbox-->
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" style="color:gray" type="text" id="uname" name="uname">
-    <label style="color:blue" class="mdl-textfield__label" for="uname">{{i18n .Lang "username"}}...</label>
+    <input class="mdl-textfield__input" style="color:black" type="text" id="uname" name="uname">
+    <label style="color:gray" class="mdl-textfield__label" for="uname">{{i18n .Lang "username"}}...</label>
   </div>
+
   <!--右邊的textbox-->
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input"  style="color:gray" type="text" id="roomid" name="roomid">
-    <label style="color:blue" class="mdl-textfield__label" for="roomid">{{i18n .Lang "roomidstr"}}...</label>
+    <input class="mdl-textfield__input"  style="color:black" type="text" id="roomid" name="roomid">
+    <label style="color:gray" class="mdl-textfield__label" for="roomid">{{i18n .Lang "roomidstr"}}...</label>
   </div>
+
 <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
   <i class="material-icons">forward</i>
 </button>
+
 </form>
-
-    <p>
-        <img src="../static/img/go.png"align ="right"/>
-        <img src="../static/img/logo.png"align ="right"/>
-    </p>
-
+        <img src="../static/img/1.png"width=229 height=200/>
+        <img src="../static/img/2.png"width=229 height=200/> 
+        <img src="../static/img/9.png"width=229 height=200/>
+        <img src="../static/img/4.png"width=229 height=200/>
+        <img src="../static/img/5.png"width=229 height=200/>
+        <body bgcolor="ffffff"></body>
   </main>
 </div>
 <!--

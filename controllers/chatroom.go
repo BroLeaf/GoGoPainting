@@ -22,7 +22,7 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/gorilla/websocket"
 
-	"keyChat/models"
+	"GoGoPainting/models"
 )
 
 var i int = 0

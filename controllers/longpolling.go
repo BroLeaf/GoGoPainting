@@ -15,7 +15,7 @@
 package controllers
 
 import (
-	"keyChat/models"
+	"GoGoPainting/models"
 )
 
 // LongPollingController handles long polling requests.

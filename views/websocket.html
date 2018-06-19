@@ -9,53 +9,62 @@
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       
-     <span  class="mdl-layout-title"><span id="uname">{{.UserName}}</span>  [room:<span id="roomid">{{.roomid}}</span>]</span>
+     <span  class="mdl-layout-title" >GO GO PAINTING </span></span>
       
       <div class="mdl-layout-spacer"></div>
       
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href="javascript:void(0)">Todo</a>
+        <!--<a class="mdl-navigation__link" href="javascript:void(0)">Todo</a> -->
         <a class="mdl-navigation__link" href="/">Home</a>
       </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title" style="color:white">KeyChat</span>
+    <span class="mdl-layout-title" style="color:rgb(13, 13, 228)">GO GO PAINTING</span>
     <nav class="mdl-navigation">
-      <a style="color:white" class="mdl-navigation__link" href="javascript:void(0)">Todo</a>
-      <a style="color:white" class="mdl-navigation__link" href="/">Home</a>
-      <A style="color:white" class="mdl-navigation__link" href="mailto:cowkeys@outlook.com">Email Me</A>
+  
+      <!--<a style="color:rgb(7, 6, 6)" class="mdl-navigation__link" href="javascript:void(0)">Todo</a> -->
+      <a style="color:rgb(8, 7, 7)"style="color:rgb(8, 7, 7)" class="mdl-navigation__link" href="/">Home</a>
+      <A style="color:rgb(17, 15, 15)" class="mdl-navigation__link" href="mailto:kshs010620@gmail.com">Email Me</A>
+      <A style="color:rgb(17, 15, 15)" class="mdl-navigation__link" >Help </A>
+      <A style="color:rgb(17, 15, 15)" class="mdl-navigation__link" >About us </A>
+      <img src="../static/img/10.png"width=229 height=200/>
     </nav>
-    <span class="warninginfo">* if we detect that you have not say anything within 6 mins,you will be kicked out.</span>
+<!--    <span class="warninginfo">* if we detect that you have not say anything within 6 mins,you will be kicked out.</span>
 <span class="warninginfo">* this is a web app without any database,so the words will not be recorded as any form.</span>
- <span class="warninginfo">* any question please contact cowkeys@outlook.com </span>
-  </div>
+ <span class="warninginfo">* any question please contact cowkeys@outlook.com </span> -->
+ 
+    </div>
+
   <main class="mdl-layout__content">
     <div class="page-content">
       <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--7-col">     
+    <span  style="color:white" class="mdl-layout-title ">[ USER ] <span id="uname">{{.UserName}}</span>     [ ROOM ] <span id="roomid">{{.roomid}}</span>
+
 <ul class="demo-list-item demo-list-three mdl-list" id="chatbox" style="color:white">
   <li class="mdl-list__item mdl-list__item--three-line" style="color:white"></li>
+
 </ul>
   </div>
-  <div class="mdl-cell mdl-cell--4-col">
-
+  <div class="mdl-cell mdl-cell--4-col"> 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="color:white">
 <input style="display: inline-block;" class="mdl-textfield__input" type="text" id="sendbox" style="color:white">
+    
     <label class="mdl-textfield__label" for="sendbox" style="color:white">Type Msg...</label>
-<div style="float:right">
+<div style="float:right"></div>
+
 <button id="sendbtn"  class="mdl-button mdl-js-button">
   <i id="sendbtn" class="material-icons">send</i>
-</button> 
+</button>
+ 
     </div>
-  </div>
+</div> 
 
   </div>
-  <div class="mdl-cell mdl-cell--1-col">
-
-  </div>
+  <div class="mdl-cell mdl-cell--1-col"></div>
 </div>
-  </div>
+
   </main>
 
 </div>

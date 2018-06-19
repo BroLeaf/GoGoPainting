@@ -19,7 +19,7 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/beego/i18n"
 
-	"keyChat/controllers"
+	"GoGoPainting/controllers"
 )
 
 const (
