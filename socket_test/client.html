@@ -1,8 +1,8 @@
-<script src="http://localhost:8080/socket.io/socket.io.js"></script>
+<script src="http://172.20.10.7:8080/socket.io/socket.io.js"></script>
 
 <script>
   //連結socket.io server位置
-  var socket = io.connect('http://localhost:8080');
+  var socket = io.connect('http://172.20.10.7:8080');
   //聽取news這個event，並在callback中處理
   socket.on('news', function (data) {
       

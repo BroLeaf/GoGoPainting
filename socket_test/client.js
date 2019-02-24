@@ -1,5 +1,5 @@
 var log = require('nodeutil').logger.getInstance('test');
-var socket_host = '127.0.0.1:8080'
+var socket_host = '172.20.10.7:8080'
 
 var io = require('socket.io-client');
 var opts = { reconnect: true, connect_timeout: 5000 };

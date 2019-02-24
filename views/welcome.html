@@ -9,42 +9,49 @@
 .demo-layout-transparent .mdl-layout__drawer-button {
   /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
-  color: rgb(245, 241, 241);
+  color: white;
 }
 </style>
 {{define "body"}}
 
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
  
-  <main class="mdl-layout__content">
-     <!--<h2 style="color:white"> GO GO PAINTING !</h2> -->
-     <img src="../static/img/logo2.png"width=500 height=100/>
-    <br>
-<form action="/join" method="post" >
-    <marquee>倪好醜</marquee>
-  <!--左邊的textbox-->
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" style="color:black" type="text" id="uname" name="uname">
-    <label style="color:gray" class="mdl-textfield__label" for="uname">{{i18n .Lang "username"}}...</label>
-  </div>
+        <main class="mdl-layout__content">
+                <!--<h2 style="color:white"> GO GO PAINTING !</h2> -->
+                <p Align=center>
+                <img src="../static/img/p3.png"width=400 height=160 style="top:100px;left:170px;position:absolute;"/>
+                </p>
+               <br>
+           <form action="/join" method="post" >
+               <marquee></marquee>
+            
+           
+             <!--左邊的textbox-->
 
-  <!--右邊的textbox-->
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input"  style="color:black" type="text" id="roomid" name="roomid">
-    <label style="color:gray" class="mdl-textfield__label" for="roomid">{{i18n .Lang "roomidstr"}}...</label>
-  </div>
+             <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="top:190px;left:760px;position:absolute;">
+                    
+               <input class="mdl-textfield__input" style="color:black" type="text" id="uname" name="uname">
+               <label style="color:gray" class="mdl-textfield__label" for="uname">{{i18n .Lang "username"}}...</label>
+             </div>
 
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-  <i class="material-icons">forward</i>
-</button>
-
-</form>
-        <img src="../static/img/1.png"width=229 height=200/>
-        <img src="../static/img/2.png"width=229 height=200/> 
-        <img src="../static/img/9.png"width=229 height=200/>
-        <img src="../static/img/4.png"width=229 height=200/>
-        <img src="../static/img/5.png"width=229 height=200/>
-        <body bgcolor="ffffff"></body>
+             <!--右邊的textbox-->
+             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="top:280px;left:720px;position:absolute;">
+               <input class="mdl-textfield__input"  style="color:black" type="text" id="roomid" name="roomid">
+               <label style="color:gray" class="mdl-textfield__label" for="roomid">{{i18n .Lang "roomidstr"}}...</label>
+             </div>
+           
+           <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" style="top:280px;left:1050px;position:absolute;">
+             <i class="material-icons">forward</i>
+           </button>
+        </form>
+           <p Align=center>
+        <img src="../static/img/2.png"width=229 height=200 style="top:410px;left:60px;position:absolute;"/>
+        <img src="../static/img/1.png"width=229 height=200 style="top:400px;left:290px;position:absolute;"/> 
+        
+        <img src="../static/img/4.png"width=229 height=200 style="top:400px;left:750px;position:absolute;"/>
+        <img src="../static/img/5.png"width=229 height=200 style="top:400px;left:970px;position:absolute;"/>
+        </p>
+        <body background="../static/img/bg.png" style="background-size:cover;"></body>
   </main>
 </div>
 <!--

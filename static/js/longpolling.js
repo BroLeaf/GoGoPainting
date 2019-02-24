@@ -10,13 +10,13 @@ var fetch = function () {
             switch (event.Type) {
             case 0: // JOIN
                 if (event.User == $('#uname').text()) {
-                    $("#chatbox li").first().before("<li>You joined the chat room.</li>");
+                    $("#chatbox li").first().before("<li>" + event.User + "加入房間</li>");
                 } else {
-                    $("#chatbox li").first().before("<li>" + event.User + " joined the chat room.</li>");
+                    $("#chatbox li").first().before("<li>" + event.User + "加入房間</li>");
                 }
                 break;
             case 1: // LEAVE
-                $("#chatbox li").first().before("<li>" + event.User + " left the chat room.</li>");
+                $("#chatbox li").first().before("<li>" + event.User + "離開房間</li>");
                 break;
             case 2: // MESSAGE
                 $("#chatbox li").first().before("<li><b>" + event.User + "</b>: " + event.Content + "</li>");

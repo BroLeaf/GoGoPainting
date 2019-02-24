@@ -16,6 +16,7 @@ package controllers
 
 import (
 	"container/list"
+	"fmt"
 	"strings"
 	"time"
 
@@ -25,8 +26,10 @@ import (
 	"GoGoPainting/models"
 )
 
+var idx int = 0
 var i int = 0
-var guess [10]string
+var guess [20]string
+var answer string
 
 type Subscription struct {
 	Archive []models.Event      // All the events from the archive.
@@ -34,26 +37,14 @@ type Subscription struct {
 }
 
 func newEvent(ep models.EventType, user, roomid, msg string) models.Event {
-	guess[0] = "水壺"
-	guess[1] = "廚房"
-	guess[2] = "豬"
-	guess[3] = "媽媽"
-	guess[4] = "高爾夫"
-	guess[5] = "臉書"
-	guess[6] = "筆電"
-	guess[7] = "樹葉"
-	guess[8] = "三星"
-	guess[9] = "玫瑰"
 
-	if strings.Compare(msg, guess[i]) == 0 {
-		i++
-		if i == 10 {
-			i = 0
-		}
-		return models.Event{ep, user, roomid, int(time.Now().Unix()), "i got it !"}
+	if strings.Compare(msg, guess[idx]) == 0 {
+
+		return models.Event{ep, user, roomid, int(time.Now().Unix()), "猜對了 !"}
 	} else {
 		return models.Event{ep, user, roomid, int(time.Now().Unix()), msg}
 	}
+
 }
 
 func Join(user string, roomid string, ws *websocket.Conn) {
@@ -84,7 +75,63 @@ var (
 
 // This function handles all incoming chan messages.
 func chatroom() {
+
 	for {
+
+		//2017-06-20 18:16:15
+		var s string
+		//var c string
+
+		//***
+		if i == 0 {
+			i++
+			ticker := time.NewTicker(time.Millisecond * 1000)
+			go func() {
+				for range ticker.C {
+
+					now := time.Now()
+					formatNow := now.Format("2006-01-02 15:04:05")
+
+					s = string([]byte(formatNow)[17:19])
+					//c = string([]byte(formatNow)[18:19])
+					fmt.Println("[ time ]", string([]byte(formatNow)[11:19]))
+					/*
+						if c == "0" {
+							idx = (idx + 1) % 20
+							fmt.Println("Answer change to <", guess[idx], ">")
+						}
+					*/
+					if s == "30" || s == "00" {
+						idx = (idx + 1) % 20
+						fmt.Println("答案變成 <", guess[idx], ">")
+					}
+
+				}
+			}()
+			i++
+		}
+		// Ticker和Timer一样可以被停止。一旦Ticker停止后，通道将不再
+		// 接收数据，这里我们将在1500毫秒之后停止
+		//time.Sleep(time.Millisecond * 900000)
+		//ticker.Stop()
+		//fmt.Println("Ticker stopped")
+
+		//***
+		/*
+			ticker := time.NewTicker(time.Second * 1)
+			wg := sync.WaitGroup{}
+
+			wg.Add(10)
+			go func() {
+				for t := range ticker.C {
+					fmt.Printf("Backup at %s\n", t)
+					wg.Done()
+				}
+			}()
+
+			wg.Wait()
+			ticker.Stop()
+		*/
 		select {
 		case sub := <-subscribe:
 			if !isUserExist(subscribers, sub.Name) {
@@ -127,6 +174,30 @@ func chatroom() {
 }
 
 func init() {
+	guess[0] = "水壺"
+	guess[1] = "廚房"
+	guess[2] = "豬"
+	guess[3] = "媽媽"
+	guess[4] = "高爾夫"
+	guess[5] = "臉書"
+	guess[6] = "筆電"
+	guess[7] = "樹葉"
+	guess[8] = "三星"
+	guess[9] = "玫瑰"
+	guess[10] = "牙刷"
+	guess[11] = "消防車"
+	guess[12] = "蟬"
+	guess[13] = "吉他"
+	guess[14] = "輪框"
+	guess[15] = "海灘褲"
+	guess[16] = "泡麵"
+	guess[17] = "肥宅"
+	guess[18] = "大便"
+	guess[19] = "網球"
+
+	answer = guess[idx]
+	fmt.Println("[ 答案 ]", guess[idx])
+
 	go chatroom()
 }
 

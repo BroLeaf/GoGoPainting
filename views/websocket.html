@@ -3,34 +3,44 @@
 <title>{{i18n .Lang "websocket_chatroom"}} - {{i18n .Lang "app_intro"}}</title>
 {{end}}
 {{define "body"}}
-<script src="http://127.0.0.1:9999/socket.io/socket.io.js"></script>
+<body background="../static/img/bg.png" style="background-size:cover;"></body>
+<script src="http://192.168.43.195:9999/socket.io/socket.io.js"></script>
 <script src="../static/js/main.js"></script>
 		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       
-     <span  class="mdl-layout-title" >GO GO PAINTING </span></span>
-      
+     <!--<span  class="mdl-layout-title">GO GO PAINTING </span></span> -->
+     <img src="../static/img/p2.png"width=200 height=70/>
       <div class="mdl-layout-spacer"></div>
       
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         <!--<a class="mdl-navigation__link" href="javascript:void(0)">Todo</a> -->
+        <a class="mdl-navigation__link" id="guess_ans">猜猜答案!</a>
         <a class="mdl-navigation__link" href="/">Home</a>
       </nav>
     </div>
   </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title" style="color:rgb(13, 13, 228)">GO GO PAINTING</span>
-    <nav class="mdl-navigation">
+  <div style="background-color:white;"class="mdl-layout__drawer">
+      <nav class="mdl-navigation">
+      <p Align=center>
+      <img src="../static/img/p1.png"width=200 height=60/>
+    
+    <!--<span class="mdl-layout-title" style="color:rgb(13, 13, 228)">GO GO PAINTING</span>-->
+    
   
       <!--<a style="color:rgb(7, 6, 6)" class="mdl-navigation__link" href="javascript:void(0)">Todo</a> -->
-      <a style="color:rgb(8, 7, 7)"style="color:rgb(8, 7, 7)" class="mdl-navigation__link" href="/">Home</a>
-      <A style="color:rgb(17, 15, 15)" class="mdl-navigation__link" href="mailto:kshs010620@gmail.com">Email Me</A>
-      <A style="color:rgb(17, 15, 15)" class="mdl-navigation__link" >Help </A>
-      <A style="color:rgb(17, 15, 15)" class="mdl-navigation__link" >About us </A>
-      <img src="../static/img/10.png"width=229 height=200/>
+      <a style="color:rgb(8, 7, 7)" class="mdl-navigation__link" href="/">回主選單</a>
+      <A style="color:rgb(17, 15, 15)" class="mdl-navigation__link" href="mailto:kshs010620@gmail.com">聯絡團隊</A>
+      <A style="color:rgb(17, 15, 15)" class="mdl-navigation__link" href="https://researchoutput.ncku.edu.tw/files-asset/16412381/10408023.jpg">團隊顧問 </A>
+      <A style="color:rgb(17, 15, 15)" class="mdl-navigation__link" href="https://www.facebook.com/profile.php?id=100002939864844">關於團隊 </A>
+      
     </nav>
-<!--    <span class="warninginfo">* if we detect that you have not say anything within 6 mins,you will be kicked out.</span>
+   <p>
+     <p>
+    <img src="../static/img/10.png"width=229 height=200/>
+    <!--
+      <span class="warninginfo">* Enjoy it.</span>
 <span class="warninginfo">* this is a web app without any database,so the words will not be recorded as any form.</span>
  <span class="warninginfo">* any question please contact cowkeys@outlook.com </span> -->
  
@@ -39,22 +49,22 @@
   <main class="mdl-layout__content">
     <div class="page-content">
       <div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--7-col">     
-    <span  style="color:white" class="mdl-layout-title ">[ USER ] <span id="uname">{{.UserName}}</span>     [ ROOM ] <span id="roomid">{{.roomid}}</span>
+  <div class="mdl-cell mdl-cell--7-col" style="color:black">     
+    <span  style="color:white" class="mdl-layout-title ">[ 使用者 ] <span id="uname">{{.UserName}}</span>     [ 房號 ] <span id="roomid">{{.roomid}}</span>
 
-<ul class="demo-list-item demo-list-three mdl-list" id="chatbox" style="color:white">
-  <li class="mdl-list__item mdl-list__item--three-line" style="color:white"></li>
+<ul class="demo-list-item demo-list-three mdl-list" id="chatbox" style="color:black">
+  <li class="mdl-list__item mdl-list__item--three-line" style="color:black"></li>
 
 </ul>
   </div>
-  <div class="mdl-cell mdl-cell--4-col"> 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="color:white">
-<input style="display: inline-block;" class="mdl-textfield__input" type="text" id="sendbox" style="color:white">
+  <div class="mdl-cell mdl-cell--4-col" style="top:420px;left:100px;position:absolute;"> 
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="color:black">
+<input style="display: inline-block;" class="mdl-textfield__input" type="text" id="sendbox" style="color:black;">
     
-    <label class="mdl-textfield__label" for="sendbox" style="color:white">Type Msg...</label>
+    <label class="mdl-textfield__label" for="sendbox" style="color:black">傳送訊息或答案...</label>
 <div style="float:right"></div>
 
-<button id="sendbtn"  class="mdl-button mdl-js-button">
+<button id="sendbtn"  class="mdl-button mdl-js-button" style="top:10px;left:310px;position:absolute;">
   <i id="sendbtn" class="material-icons">send</i>
 </button>
  

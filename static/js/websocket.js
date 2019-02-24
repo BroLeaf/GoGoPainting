@@ -14,9 +14,9 @@ $(document).ready(function () {
             if (data.User == $('#uname').text()) {
                 $("#chatbox li").last().after(`<li class="mdl-list__item mdl-list__item--three-line">
     <span class="mdl-list__item-primary-content">
-      <span style="color:gray;font-size:70%"> [`+time+`]</span><span style="color:white">You</span>
+      <span style="color:gray;font-size:70%"> [`+time+`]</span><span style="color:white">`+data.User+`</span>
       <span style="color:white" class="mdl-list__item-text-body">
-        joined the chat room.
+        加入房間
       </span>
     </span>
   </li>`);
@@ -25,7 +25,7 @@ $(document).ready(function () {
     <span class="mdl-list__item-primary-content">
      <span style="color:gray;font-size:70%"> [`+time+`]</span><span style="color:white">`+data.User+`</span>
       <span style="color:white" class="mdl-list__item-text-body">
-        joined the chat room.
+        加入房間
       </span>
     </span>
   </li>`);
@@ -36,7 +36,7 @@ $(document).ready(function () {
     <span class="mdl-list__item-primary-content">
       <span style="color:gray;font-size:70%"> [`+time+`]</span><span style="color:red">`+data.User+`</span>
       <span style="color:red" class="mdl-list__item-text-body">
-        left the chat room.
+        離開房間
       </span>
     </span>
   </li>`);
